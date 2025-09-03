@@ -153,6 +153,8 @@ Create or update your main CSS file (e.g., `app.css` or `globals.css`):
 @import "@azodik/ui/globals.css";
 ```
 
+**Important**: Make sure you have Tailwind CSS 4 installed and configured in your project for the CSS import to work properly.
+
 ### PostCSS Configuration
 
 Update your `postcss.config.mjs`:
