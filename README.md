@@ -1,6 +1,6 @@
 # @azodik/ui
 
-A modern, accessible React UI component library built with Radix UI, Tailwind CSS, and TypeScript.
+A modern, accessible React UI component library built with Radix UI, Tailwind CSS, and TypeScript. This package is inspired by [shadcn/ui](https://ui.shadcn.com/) and provides a curated collection of high-quality, accessible components for building beautiful user interfaces.
 
 ## Features
 
@@ -134,37 +134,110 @@ function App() {
 - **Date**: Calendar, DatePicker
 - **Media**: Avatar, AspectRatio
 
-## Tailwind CSS Setup
+## Tailwind CSS 4 Setup
 
-This package uses Tailwind CSS. Make sure you have Tailwind CSS configured in your project:
+This package uses Tailwind CSS 4. Make sure you have Tailwind CSS configured in your project:
 
 ```bash
-npm install -D tailwindcss postcss autoprefixer
-npx tailwindcss init -p
+npm install -D tailwindcss@next @tailwindcss/postcss
 ```
 
-Update your `tailwind.config.js`:
+### CSS Setup
+
+Create or update your main CSS file (e.g., `app.css` or `globals.css`):
+
+```css
+@import "tailwindcss";
+
+/* Import the UI package styles */
+@import "@azodik/ui/globals.css";
+```
+
+### PostCSS Configuration
+
+Update your `postcss.config.mjs`:
 
 ```js
-/** @type {import('tailwindcss').Config} */
-module.exports = {
+export default {
+  plugins: {
+    '@tailwindcss/postcss': {},
+  },
+}
+```
+
+### Content Scanning
+
+Tailwind CSS 4 automatically scans your files for classes. Make sure your build process includes the UI package files:
+
+```js
+// If you need to manually configure content scanning
+export default {
   content: [
     "./src/**/*.{js,ts,jsx,tsx}",
     "./node_modules/@azodik/ui/dist/**/*.{js,ts,jsx,tsx}"
   ],
-  theme: {
-    extend: {},
-  },
-  plugins: [],
 }
 ```
 
-## CSS Variables
+## CSS Variables & Theming
 
-The package uses CSS variables for theming. Import the globals.css to get the default theme:
+The package uses CSS variables for theming. Import the globals.css to get the default theme and component styles:
 
 ```css
+@import "tailwindcss";
 @import '@azodik/ui/globals.css';
+```
+
+### Available CSS Variables
+
+The package provides the following CSS custom properties for theming:
+
+```css
+:root {
+  /* Colors */
+  --background: 0 0% 100%;
+  --foreground: 222.2 84% 4.9%;
+  --card: 0 0% 100%;
+  --card-foreground: 222.2 84% 4.9%;
+  --popover: 0 0% 100%;
+  --popover-foreground: 222.2 84% 4.9%;
+  --primary: 222.2 47.4% 11.2%;
+  --primary-foreground: 210 40% 98%;
+  --secondary: 210 40% 96%;
+  --secondary-foreground: 222.2 84% 4.9%;
+  --muted: 210 40% 96%;
+  --muted-foreground: 215.4 16.3% 46.9%;
+  --accent: 210 40% 96%;
+  --accent-foreground: 222.2 84% 4.9%;
+  --destructive: 0 84.2% 60.2%;
+  --destructive-foreground: 210 40% 98%;
+  --border: 214.3 31.8% 91.4%;
+  --input: 214.3 31.8% 91.4%;
+  --ring: 222.2 84% 4.9%;
+  --radius: 0.5rem;
+}
+
+.dark {
+  --background: 222.2 84% 4.9%;
+  --foreground: 210 40% 98%;
+  --card: 222.2 84% 4.9%;
+  --card-foreground: 210 40% 98%;
+  --popover: 222.2 84% 4.9%;
+  --popover-foreground: 210 40% 98%;
+  --primary: 210 40% 98%;
+  --primary-foreground: 222.2 47.4% 11.2%;
+  --secondary: 217.2 32.6% 17.5%;
+  --secondary-foreground: 210 40% 98%;
+  --muted: 217.2 32.6% 17.5%;
+  --muted-foreground: 215 20.2% 65.1%;
+  --accent: 217.2 32.6% 17.5%;
+  --accent-foreground: 210 40% 98%;
+  --destructive: 0 62.8% 30.6%;
+  --destructive-foreground: 210 40% 98%;
+  --border: 217.2 32.6% 17.5%;
+  --input: 217.2 32.6% 17.5%;
+  --ring: 212.7 26.8% 83.9%;
+}
 ```
 
 ## TypeScript
@@ -174,6 +247,21 @@ This package is built with TypeScript and includes proper type definitions. No a
 ## Contributing
 
 Contributions are welcome! Please read our contributing guidelines.
+
+## Acknowledgments
+
+This UI package is built on top of amazing open-source projects:
+
+- **[shadcn/ui](https://ui.shadcn.com/)** - Beautiful, accessible, and customizable components that inspired this library
+- **[Radix UI](https://www.radix-ui.com/)** - Unstyled, accessible components for building high‑quality design systems
+- **[Tailwind CSS](https://tailwindcss.com/)** - Utility-first CSS framework for rapid UI development
+- **[Lucide React](https://lucide.dev/)** - Beautiful & consistent icon toolkit
+- **[Recharts](https://recharts.org/)** - Composable charting library for React
+- **[React Hook Form](https://react-hook-form.com/)** - Performant, flexible and extensible forms with easy validation
+- **[Zod](https://zod.dev/)** - TypeScript-first schema validation with static type inference
+- **[Next Themes](https://github.com/pacocoursey/next-themes)** - Perfect next.js dark mode in 30 seconds
+- **[Class Variance Authority](https://cva.style/docs)** - A class variance authority for building component variants
+- **[Tailwind Merge](https://github.com/dcastil/tailwind-merge)** - Utility to efficiently merge Tailwind CSS classes without style conflicts
 
 ## License
 
