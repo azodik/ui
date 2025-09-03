@@ -6,7 +6,7 @@ import { cva, VariantProps } from 'class-variance-authority';
 import { PanelLeftIcon } from 'lucide-react';
 
 import { useIsMobile } from '@azodik/ui/hooks/use-mobile';
-import { cn } from '@azodik/ui/lib/utils';
+import { cn } from '../lib/utils';
 import { Button } from '@azodik/ui/components/button';
 import { Input } from '@azodik/ui/components/input';
 import { Separator } from '@azodik/ui/components/separator';
