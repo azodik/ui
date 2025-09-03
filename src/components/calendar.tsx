@@ -5,7 +5,7 @@ import { ChevronDownIcon, ChevronLeftIcon, ChevronRightIcon } from 'lucide-react
 import { DayButton, DayPicker, getDefaultClassNames } from 'react-day-picker';
 
 import { cn } from '@azodik/ui/lib/utils';
-import { Button, buttonVariants } from 'src/components/button';
+import { Button, buttonVariants } from '@azodik/ui/components/button';
 
 function Calendar({
   className,

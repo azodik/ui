@@ -14,7 +14,7 @@ import {
 } from 'react-hook-form';
 
 import { cn } from '@azodik/ui/lib/utils';
-import { Label } from 'src/components/label';
+import { Label } from '@azodik/ui/components/label';
 
 const Form = FormProvider;
 

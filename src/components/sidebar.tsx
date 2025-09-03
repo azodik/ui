@@ -5,20 +5,25 @@ import { Slot } from '@radix-ui/react-slot';
 import { cva, VariantProps } from 'class-variance-authority';
 import { PanelLeftIcon } from 'lucide-react';
 
-import { useIsMobile } from 'src/hooks/use-mobile';
+import { useIsMobile } from '@azodik/ui/hooks/use-mobile';
 import { cn } from '@azodik/ui/lib/utils';
-import { Button } from 'src/components/button';
-import { Input } from 'src/components/input';
-import { Separator } from 'src/components/separator';
+import { Button } from '@azodik/ui/components/button';
+import { Input } from '@azodik/ui/components/input';
+import { Separator } from '@azodik/ui/components/separator';
 import {
   Sheet,
   SheetContent,
   SheetDescription,
   SheetHeader,
   SheetTitle,
-} from 'src/components/sheet';
-import { Skeleton } from 'src/components/skeleton';
-import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from 'src/components/tooltip';
+} from '@azodik/ui/components/sheet';
+import { Skeleton } from '@azodik/ui/components/skeleton';
+import {
+  Tooltip,
+  TooltipContent,
+  TooltipProvider,
+  TooltipTrigger,
+} from '@azodik/ui/components/tooltip';
 
 const SIDEBAR_COOKIE_NAME = 'sidebar_state';
 const SIDEBAR_COOKIE_MAX_AGE = 60 * 60 * 24 * 7;
